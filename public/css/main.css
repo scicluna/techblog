@@ -47,7 +47,12 @@ p {
     border-radius: 10%;
     text-decoration: none;
     color: rgba(255, 255, 255, 0.827);
-    border: 1px solid rgba(255, 255, 255, 0.827);
+    border: 1px solid rgba(255, 255, 255, 0.694);
+}
+
+.addpost:hover {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
 }
 
 .contentdiv {
@@ -62,21 +67,54 @@ p {
     margin: 5px;
 }
 
-.newpost>button {
+.newpost>button,
+.newcomment>button {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 5%;
+    margin-bottom: 5px;
 }
 
 .newpost #posttitle {
     width: 25%;
 }
 
-.newpost #posttext {
+#posttext,
+#commenttext {
     width: 60%;
+}
+
+#commenttext {
+    margin-top: 5px;
 }
 
 .blogposts {
     margin: 10px;
+}
+
+.card-body {
+    background-color: rgba(66, 66, 66, 0.906);
+}
+
+.tiny {
+    display: flex;
+}
+
+.blogpost {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.669);
+}
+
+.blogpost:hover {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.comment {
+    color: rgb(255, 255, 255);
+}
+
+.newcomment>.form-group {
+    margin-bottom: 5px;
 }

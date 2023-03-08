@@ -63,3 +63,19 @@ async function newPost(e){
     else alert('Post Failed.')
 }
 if (document.getElementById('postsubmit')) document.getElementById('postsubmit').addEventListener("click", newPost)
+
+async function newComment(e){
+    e.preventDefault()
+
+    const body = document.getElementById('commenttext').value.trim()
+    const postId = window.location.href.split('/').pop().replace('?', '')
+
+    const response = await fetch('/api/blog/newcomment', {
+        method: 'POST',
+        body: JSON.stringify({body, postId}),
+        headers: {'Content-Type': 'application/json'}
+    })
+    if (response.ok) document.location.reload()
+    else alert('Post Failed.')
+}
+if (document.getElementById('commentsubmit')) document.getElementById('commentsubmit').addEventListener("click", newComment)

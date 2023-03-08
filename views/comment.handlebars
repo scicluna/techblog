@@ -1,0 +1,16 @@
+<div class="blogposts">
+    {{>post plainPostData}}
+
+    <form class="newcomment">
+        <div class="form-group">
+            <textarea class="form-control" id="commenttext" rows="2" placeholder="comment here"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" id="commentsubmit">Submit</button>
+    </form>
+
+    {{#each plainCommentData as |comment|}}
+    {{>response}}
+    {{/each}}
+
+
+</div>
