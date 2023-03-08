@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+}
+
+body {
+    background-color: rgb(66, 66, 66);
+}
+
+.navnav {
+    display: flex;
+    justify-content: flex-start
+}

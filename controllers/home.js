@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 router.get('/', async(req, res) => {
-    res.send("Hello World")
+    res.render('homepage', {loggedIn: req.session.loggedIn})
 })
 
 module.exports = router
