@@ -7,9 +7,23 @@
 
 body {
     background-color: rgb(66, 66, 66);
+    color: rgba(255, 255, 255, 0.827);
 }
 
 .navnav {
     display: flex;
     justify-content: flex-start
+}
+
+.loginform,
+.signupform {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    padding: 5px;
+}
+
+.loginform>button,
+.signupform>button {
+    width: 25%;
 }
