@@ -25,5 +25,8 @@ body {
 
 .loginform>button,
 .signupform>button {
-    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
 }
