@@ -20,25 +20,23 @@ router.post('/login', async(req, res) => {
     } catch (err){res.status(500).json(err)}
 })
 
-router.post('/signup', (req, res) => {
+router.post('/signup', async(req, res) => {
     try {
-        const {username, password, password2} = req.body
+        const {username, password} = req.body
 
-        if (password !== password2) return alert("Passwords don't match")
-
-        const newUser = User.create({user_name: username, password})
+        const newUser = await User.create({user_name: username, password: password})
         if (!newUser) return res.status(400).json({msg: "User not created"})
 
-        res.session.save(()=>{
+        req.session.save(()=>{
             req.session.loggedIn = true
             req.session.user = newUser.get({plain:true})
-            res.status(200).json({ user: userData, message: 'You are now logged in!' })
+            res.status(200).json({ user: newUser, message: 'You are now logged in!' })
         })
     }  catch (err){res.status(500).json(err)}
 })
 
 router.post('/logout', (req,res) => {
-    if (req.session.loggedInq) {req.session.destroy(()=>{
+    if (req.session.loggedIn) {req.session.destroy(()=>{
         res.status(204).end()
     })} else res.status(404).end()
 })

@@ -5,10 +5,10 @@ THEN I am presented with the homepage, which includes existing blog posts if any
 WHEN I click on the homepage option - DONE
 THEN I am taken to the homepage - DONE
 
-WHEN I click on any other links in the navigation
-THEN I am prompted to either sign up or sign in
+WHEN I click on any other links in the navigation - DONE
+THEN I am prompted to either sign up or sign in - DONE
 
-WHEN I choose to sign up
+WHEN I choose to sign up 
 THEN I am prompted to create a username and password
 
 WHEN I click on the sign-up button

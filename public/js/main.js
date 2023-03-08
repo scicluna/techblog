@@ -46,4 +46,4 @@ async function logOut(e){
     if(response.ok) document.location.replace('/')
     else alert('Logout failed somehow.')
 }
-if (document.querySelector(".logout")) document.querySelector(".logout").addEventListener("click", logOut)
+if (document.getElementById('logoutbutton')) document.getElementById('logoutbutton').addEventListener("click", logOut)
