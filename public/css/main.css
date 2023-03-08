@@ -35,3 +35,48 @@ p {
     align-items: center;
     width: 30%;
 }
+
+.addpost {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5vh;
+    height: 2.5vh;
+    margin: 1vw;
+    padding: 5px;
+    border-radius: 10%;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.827);
+    border: 1px solid rgba(255, 255, 255, 0.827);
+}
+
+.contentdiv {
+    margin-top: 5px;
+}
+
+.newpost {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 5px;
+    margin: 5px;
+}
+
+.newpost>button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5%;
+}
+
+.newpost #posttitle {
+    width: 25%;
+}
+
+.newpost #posttext {
+    width: 60%;
+}
+
+.blogposts {
+    margin: 10px;
+}

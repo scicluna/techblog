@@ -1,0 +1,9 @@
+<div class="contentdiv">
+    <a href="/newpost" class="addpost"><i class="fas fa-plus"></i></a>
+
+    <div class="blogposts">
+        {{#each blogPosts as |blogpost|}}
+        {{>post}}
+        {{/each}}
+    </div>
+</div>
