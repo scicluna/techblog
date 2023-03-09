@@ -1,25 +1,27 @@
 const router = require('express').Router()
 const { User } = require('../../models/index')
 
+//handles logins
 router.post('/login', async(req, res) => {
     try {
         const {username, password} = req.body
     
         const userData = await User.findOne({where:{user_name: username}})
-        if (!userData) return res.status(500).json("Something Went Wrong")
+        if (!userData) return res.status(500).json("Not a valid login or password") //check for username
 
         const validPassword = await userData.checkPassword(password)
-        if (!validPassword) return res.status(500).json("Not a valid login or password")
+        if (!validPassword) return res.status(500).json("Not a valid login or password") //check for matching password
  
-        req.session.save(()=>{
+        //saving the session
+        req.session.save(()=>{ 
             req.session.loggedIn = true
             req.session.user = userData.get({plain: true})
             res.status(200).json({ user: userData, message: 'You are now logged in!' })
         })
-
     } catch (err){res.status(500).json(err)}
 })
 
+//handles sign ups
 router.post('/signup', async(req, res) => {
     try {
         const {username, password} = req.body
@@ -35,6 +37,7 @@ router.post('/signup', async(req, res) => {
     }  catch (err){res.status(500).json(err)}
 })
 
+//handles logging out
 router.post('/logout', (req,res) => {
     if (req.session.loggedIn) {req.session.destroy(()=>{
         res.status(204).end()
