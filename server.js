@@ -17,7 +17,8 @@ const sess = {
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
-    db: sequelize
+    db: sequelize,
+    expiration: 1 * 60 * 60 * 1000 //1 hour expiration on sessions
   })
 };
 

@@ -3,17 +3,17 @@
         <div class="toptop">
             <h5 class="card-title">{{post_title}}</h5>
             {{#if dashboard}}
-            <button class="deletepost"><i class="fas fa-trash"></i> </button>
+            <button class="deletepost" data-delete={{id}}><i class="fas fa-trash"></i> </button>
             {{/if}}
         </div>
-        <p class="card-text">{{post_body}}</p>
+        <p class="card-text" data-posttext={{id}}>{{post_body}}</p>
         <div class="tiny footfoot">
             <div class="footprint tiny">
                 <p class="card-text"><small class="text-muted">{{user.user_name}} <- </small></p>
-                <p class="card-text"><small class="text-muted"> -> {{createdAt}}</small></p>
+                <p class="card-text"><small class="text-muted"> -> {{updatedAt}}</small></p>
             </div>
             {{#if dashboard}}
-            <button class="editpost"><i class="fas fa-pen"></i></button>
+            <button class="editpost" data-edit={{id}}><i class="fas fa-pen"></i></button>
             {{/if}}
         </div>
     </div>

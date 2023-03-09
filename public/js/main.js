@@ -92,8 +92,61 @@ document.querySelectorAll(".blogpost").forEach(post => {
     post.addEventListener("click", navigateComments)
 })
 
-const editComment = (e) => {
-    e.preventDefault()
+const editPost = (e) => {
+    e.stopPropagation()
 
-    
+    const id = e.currentTarget.dataset.edit
+    const targetElement = document.querySelector(`[data-posttext="${id}"]`)
+
+    targetElement.contentEditable = true
+    targetElement.classList.add("editing")
+    targetElement.focus()
+    document.querySelectorAll(".blogpost").forEach(post => {
+        post.removeEventListener("click", navigateComments)
+    })
+
+    targetElement.addEventListener("blur", saveEditedPost)
 }
+document.querySelectorAll(".editpost").forEach(edit => {
+    edit.addEventListener("click", editPost)
+})
+
+const saveEditedPost = async(e) => {
+    const targetElement = e.target
+    targetElement.removeEventListener("blur", saveEditedPost)
+    targetElement.classList.remove("editing")
+    document.querySelectorAll(".blogpost").forEach(post => {
+        post.addEventListener("click", navigateComments)
+    })
+
+    const id = e.currentTarget.dataset.posttext
+    const body = targetElement.innerText.trim()
+    const user = document.querySelector('.username').innerText
+
+    const response = await fetch('/api/blog/postedit', {
+        method: "PUT",
+        body: JSON.stringify({body, id}),
+        headers: {'Content-Type': 'application/json'}
+    })
+    if (response.ok) document.location.replace(`/user/${user}`)
+    else alert('Failed to edit.')
+}
+
+
+const deletePost = async(e) => {
+    e.stopPropagation()
+
+    const id = e.currentTarget.dataset.delete
+    const user = document.querySelector('.username').innerText
+   
+    const response = await fetch('/api/blog/postdelete', {
+        method: 'DELETE',
+        body: JSON.stringify({id}),
+        headers: {'Content-Type': 'application/json'}
+    })
+    if (response.ok) document.location.replace(`/user/${user}`)
+    else alert('Failed to delete.')
+}
+document.querySelectorAll(".deletepost").forEach(post => {
+    post.addEventListener("click", deletePost)
+})

@@ -128,10 +128,13 @@ p {
     margin: 0;
 }
 
+
+
 .footfoot,
 .toptop {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .footfoot>button,
@@ -139,4 +142,13 @@ p {
     background-color: rgba(0, 0, 0, 0);
     border: none;
     color: rgba(255, 255, 255, 0.669);
+}
+
+.toptop>button {
+    margin-bottom: .75rem;
+}
+
+.editing {
+    cursor: default;
+    background-color: rgba(66, 66, 66, 0.758);
 }
