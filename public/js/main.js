@@ -59,7 +59,7 @@ async function newPost(e){
         body: JSON.stringify({title, body}),
         headers: {'Content-Type': 'application/json'}
     })
-    if (response.ok) document.location.replace('/')
+    if (response.ok) document.location.replace('/user')
     else alert('Post Failed.')
 }
 if (document.getElementById('postsubmit')) document.getElementById('postsubmit').addEventListener("click", newPost)

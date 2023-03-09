@@ -8,7 +8,7 @@ router.get('/:id', authUser, async(req, res) => {
     const postData = await Post.findOne({include:User, where: {id : postId}} )
     const plainPostData = postData.get({plain:true})
 
-    const commentData = await Comment.findAll({include: User, where: {post_id : postId}})
+    const commentData = await Comment.findAll({include: User, where: {post_id : postId},  order: [["createdAt", "DESC"]]})
     const plainCommentData = commentData.map(comment=>comment.get({plain:true}))
 
     console.log(plainCommentData)
