@@ -132,7 +132,6 @@ const saveEditedPost = async(e) => {
     else alert('Failed to edit.')
 }
 
-
 const deletePost = async(e) => {
     e.stopPropagation()
 

@@ -8,6 +8,7 @@
 body {
     background-color: rgb(66, 66, 66);
     color: rgba(255, 255, 255, 0.827);
+    overflow-x: hidden;
 }
 
 .navnav,
@@ -68,6 +69,10 @@ p {
     margin: 5px;
 }
 
+.card-text {
+    white-space: pre-line;
+}
+
 .newpost>button,
 .newcomment>button {
     display: flex;
@@ -106,6 +111,12 @@ p {
 .blogpost {
     text-decoration: none;
     color: rgba(255, 255, 255, 0.669);
+    margin: 20px 0;
+    filter: drop-shadow(0 0 0.25rem rgb(0, 0, 0));
+}
+
+.card {
+    border: none;
 }
 
 .blogpost:hover,
@@ -127,8 +138,6 @@ p {
 .posty>h4 {
     margin: 0;
 }
-
-
 
 .footfoot,
 .toptop {
