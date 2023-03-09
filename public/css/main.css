@@ -108,7 +108,10 @@ p {
     color: rgba(255, 255, 255, 0.669);
 }
 
-.blogpost:hover {
+.blogpost:hover,
+.footfoot>button:hover,
+.toptop>button:hover {
+    cursor: pointer;
     text-decoration: none;
     color: rgb(255, 255, 255);
 }
@@ -123,4 +126,17 @@ p {
 
 .posty>h4 {
     margin: 0;
+}
+
+.footfoot,
+.toptop {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footfoot>button,
+.toptop>button {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: rgba(255, 255, 255, 0.669);
 }

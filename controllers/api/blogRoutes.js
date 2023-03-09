@@ -25,12 +25,8 @@ router.post('/newcomment', async(req, res) => {
     } catch (err){res.status(500).json(err)}
 })
 
-
-
-
-
-
-
-
+router.put('/:type/:id', async(req, res)=>{
+    const {type, id} = req.params
+})
 
 module.exports = router;

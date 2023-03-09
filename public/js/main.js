@@ -79,3 +79,21 @@ async function newComment(e){
     else alert('Post Failed.')
 }
 if (document.getElementById('commentsubmit')) document.getElementById('commentsubmit').addEventListener("click", newComment)
+
+const navigateComments = (e) =>{
+    e.stopPropagation()
+
+    if (e.target.nodeName == 'I' || e.target.nodeName == 'BUTTON') return
+    const postId = e.currentTarget.dataset.postid
+
+    return document.location.replace(`/comment/${postId}`)
+}
+document.querySelectorAll(".blogpost").forEach(post => {
+    post.addEventListener("click", navigateComments)
+})
+
+const editComment = (e) => {
+    e.preventDefault()
+
+    
+}

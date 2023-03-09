@@ -1,10 +1,20 @@
-<a class="card blogpost" href="/comment/{{id}}">
+<div class="card blogpost" data-postid={{id}}>
     <div class="card-body">
-        <h5 class="card-title">{{post_title}}</h5>
+        <div class="toptop">
+            <h5 class="card-title">{{post_title}}</h5>
+            {{#if dashboard}}
+            <button class="deletepost"><i class="fas fa-trash"></i> </button>
+            {{/if}}
+        </div>
         <p class="card-text">{{post_body}}</p>
-        <div class="tiny">
-            <p class="card-text"><small class="text-muted">{{user.user_name}} <- </small></p>
-            <p class="card-text"><small class="text-muted"> -> {{createdAt}}</small></p>
+        <div class="tiny footfoot">
+            <div class="footprint tiny">
+                <p class="card-text"><small class="text-muted">{{user.user_name}} <- </small></p>
+                <p class="card-text"><small class="text-muted"> -> {{createdAt}}</small></p>
+            </div>
+            {{#if dashboard}}
+            <button class="editpost"><i class="fas fa-pen"></i></button>
+            {{/if}}
         </div>
     </div>
-</a>
+</div>

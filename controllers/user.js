@@ -12,8 +12,6 @@ router.get('/:user', authUser, async(req, res) => {
     const posts = await Post.findAll({include:User, where: {user_id : req.session.user.id},  order: [["createdAt", "DESC"]]})
     const blogPosts = posts.map(post=>post.get({plain:true}))
 
-    console.log(blogPosts)
-
     res.render('dashboard', {blogPosts, loggedIn: req.session.loggedIn, user: req.session.user})
 })
 
