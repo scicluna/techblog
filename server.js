@@ -12,8 +12,14 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 //boilerplate
 const app = express();
 const PORT = process.env.PORT || 3001;
-const hbs = exphbs.create({});
-hbs.register(__dirname + '/views')
+const hbs = exphbs.create({
+  extname      :'hbs',
+  layoutsDir   : '/views/Layouts',
+  defaultLayout: 'main',
+  partialsDir  : [
+      '/views/Partials'
+  ]
+});
 
 //creating our session and storing it as a cookie
 const sess = {
