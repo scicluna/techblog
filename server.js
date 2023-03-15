@@ -14,10 +14,10 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const hbs = exphbs.create({
   extname      :'handlebars',
-  layoutsDir   : '/views/Layouts',
+  layoutsDir   : 'views/Layouts',
   defaultLayout: 'main',
   partialsDir  : [
-      '/views/Partials'
+      'views/Partials'
   ]
 });
 
