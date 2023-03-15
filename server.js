@@ -5,6 +5,7 @@ const routes = require('./controllers');
 const exphbs = require('express-handlebars');
 const path = require("path")
 const sequelize = require('./config/connection');
+require('dotenv').config();
 //IMPORTS and initializes our storage
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
@@ -15,7 +16,7 @@ const hbs = exphbs.create({});
 
 //creating our session and storing it as a cookie
 const sess = {
-  secret: 'Super secret secret',
+  secret: process.env.SECRET,
   cookie: {},
   resave: false,
   saveUninitialized: true,
