@@ -1,6 +1,4 @@
 //handles our logins
-console.log("did this even load?")
-
 const logIn = async(e) => {
     e.preventDefault()
 

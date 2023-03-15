@@ -13,6 +13,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 const hbs = exphbs.create({});
+hbs.register(__dirname + '/views')
 
 //creating our session and storing it as a cookie
 const sess = {
