@@ -16,7 +16,7 @@ const hbs = exphbs.create({});
 
 //creating our session and storing it as a cookie
 const sess = {
-  secret: process.env.SECRET,
+  secret: 'super Secret Secrets are Secret',
   cookie: {},
   resave: false,
   saveUninitialized: true,
