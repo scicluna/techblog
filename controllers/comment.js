@@ -7,6 +7,7 @@ router.get('/:id', authUser, async(req, res) => {
 
     const postId = req.params.id
     const postData = await Post.findOne({include:User, where: {id : postId}} )
+    if(!postData) return
     const plainPostData = postData.get({plain:true})
 
     const commentData = await Comment.findAll({include: User, where: {post_id : postId},  order: [["createdAt", "DESC"]]})

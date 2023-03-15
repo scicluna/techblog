@@ -128,7 +128,7 @@ const saveEditedPost = async(e) => {
     }) //readd the event listeners for accessing the comments section of each post
 
     const id = e.currentTarget.dataset.posttext
-    const body = targetElement.innerText.trim()
+    const body = targetElement.innerText
     const user = document.querySelector('.username').innerText //sketchy smuggling of a variable using our html skills
 
     const response = await fetch('/api/blog/postedit', {
