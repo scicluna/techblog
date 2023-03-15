@@ -1,48 +1,40 @@
-GIVEN a CMS-style blog site
-WHEN I visit the site for the first time - DONE
-THEN I am presented with the homepage, which includes existing blog posts if any have been posted; navigation links for the homepage and the dashboard; and the option to log in - DONE
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+  
+  # Tech Deck
 
-WHEN I click on the homepage option - DONE
-THEN I am taken to the homepage - DONE
+  ## Description
 
-WHEN I click on any other links in the navigation - DONE
-THEN I am prompted to either sign up or sign in - DONE
+  This tech blog is a convenient place for people to post about recent technologies. They can even edit or delete their posts and comment on other people's posts.
 
-WHEN I choose to sign up  - DONE
-THEN I am prompted to create a username and password - DONE
+  ## Table of Contents
 
-WHEN I click on the sign-up button - DONE
-THEN my user credentials are saved and I am logged into the site - DONE
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Credits](#credits)
+  - [License](#license)
+  - [Contributions](#contributions)
+  - [Tests](#tests)
+  - [Questions](#questions)
 
-WHEN I revisit the site at a later time and choose to sign in - DONE
-THEN I am prompted to enter my username and password - DONE
+  ## Installation
 
-WHEN I am signed in to the site - DONE
-THEN I see navigation links for the homepage, the dashboard, and the option to log out - DONE
+  Just head over to my heroku link! Or if you want to run it on your personal machine, just download it, npm i to install the dependencies, and fill out the .env file with your own sql information.
 
-WHEN I click on the homepage option in the navigation - DONE
-THEN I am taken to the homepage and presented with existing blog posts that include the post title and the date created - DONE
+  ## Usage
 
-WHEN I click on an existing blog post - DONE
-THEN I am presented with the post title, contents, post creator’s username, and date created for that post and have the option to leave a comment - DONE
+  Just sign up, then navigate to your dashboard and hit the plus to add posts! Or click on a post that already exists to leave a comment!
+  ![](./img/example.png)
 
-WHEN I enter a comment and click on the submit button while signed in - DONE
-THEN the comment is saved and the post is updated to display the comment, the comment creator’s username, and the date created - DONE
+  ## License
 
-WHEN I click on the dashboard option in the navigation - DONE
-THEN I am taken to the dashboard and presented with any blog posts I have already created and the option to add a new blog post - DONE
+  This application is covered under the MIT license. Read more at [License: MIT](https://opensource.org/licenses/MIT)
 
-WHEN I click on the button to add a new blog post - DONE
-THEN I am prompted to enter both a title and contents for my blog post - DONE
+  ## Contributions
 
-WHEN I click on the button to create a new blog post - DONE
-THEN the title and contents of my post are saved and I am taken back to an updated dashboard with my new blog post - DONE
+  Just email me at sciclunajl@gmail.com with advice or opportunities
 
-WHEN I click on one of my existing posts in the dashboard - DONE
-THEN I am able to delete or update my post and taken back to an updated dashboard - DONE
+  ## Questions
 
-WHEN I click on the logout option in the navigation - DONE
-THEN I am signed out of the site - DONE
+  1. Where can I find your github so that I can view your other projects? https://github.com/scicluna
 
-WHEN I am idle on the site for more than a set time - DONE
-THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments - DONE
+  2. What email address should I use to contact you regarding further opportunities or questions? sciclunajl@gmail.com
